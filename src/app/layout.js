@@ -2,8 +2,8 @@ import './globals.css'
 import Header from './components/Header'
 
 export const metadata = {
-  title: 'Teaware Collection',
-  description: 'Beautiful teaware shop page built with Next.js + Tailwind CSS',
+  title: 'demo trà',
+  description: 'made by VH Coder',
 }
 
 export default function RootLayout({ children }) {
