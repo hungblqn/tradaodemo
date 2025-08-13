@@ -1,3 +1,5 @@
+"use client"
+
 export default function HomePage() {
   const categories = [
     { id: 1, name: "Ấm trà", description: "Nhiều loại ấm trà đẹp, từ gốm sứ đến gang.", image: "/images/categories/amtra.jpg" },
@@ -18,6 +20,13 @@ export default function HomePage() {
     { id: 4, name: "Bộ ấm chén trà", price: "1.500.000₫", image: "/images/products/boamchentra1.jpg"},
   ];
 
+  const scrollToFeatured = () => {
+    const section = document.getElementById("featured-products");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="bg-orange-100">
       <main className="max-w-7xl mx-auto lg:px-32 px-8 py-12">
@@ -32,7 +41,9 @@ export default function HomePage() {
 
         {/* Button */}
         <div className="flex justify-center mb-12">
-          <button className="bg-orange-900 text-orange-100 px-6 py-2 rounded-full font-medium hover:bg-orange-800 transition">
+          <button 
+          className="bg-orange-900 text-orange-100 px-6 py-2 rounded-full font-medium hover:bg-orange-800 transition"
+          onClick={scrollToFeatured} >
             Sản phẩm nổi bật
           </button>
         </div>
@@ -58,7 +69,7 @@ export default function HomePage() {
         </div>
 
         {/* Featured Products Section */}
-        <section>
+        <section id="featured-products">
           <h2 className="text-3xl font-serif tracking-wide text-gray-800 text-center mb-8">
             Sản phẩm nổi bật
           </h2>
