@@ -1,5 +1,5 @@
 import { GiTeapot } from "react-icons/gi";
-import { FiSearch } from "react-icons/fi";
+import { FiSearch, FiMenu } from "react-icons/fi";
 
 export default function Header() {
   return (
@@ -10,8 +10,8 @@ export default function Header() {
           AMTRA.VN<GiTeapot className="text-4xl text-orange-300" />
         </div>
 
-        {/* Thanh tìm kiếm ở giữa */}
-        <div className="flex-1 flex justify-center">
+        {/* Thanh tìm kiếm (ẩn trên màn hình nhỏ) */}
+        <div className="flex-1 flex justify-center hidden md:flex">
           <div className="flex items-center rounded-full px-3 py-1 bg-orange-200 w-56 md:w-80">
             <input
               type="text"
@@ -23,7 +23,7 @@ export default function Header() {
         </div>
 
         {/* Menu bên phải */}
-        <nav>
+        <nav className="hidden md:block">
           <ul className="flex space-x-6 text-orange-300 font-medium">
             <li className="hover:text-orange-400 cursor-pointer">Trang chủ</li>
             <li className="hover:text-orange-400 cursor-pointer">Sản phẩm</li>
@@ -32,6 +32,11 @@ export default function Header() {
             <li className="hover:text-orange-400 cursor-pointer">Đăng nhập</li>
           </ul>
         </nav>
+
+        {/* Icon menu thu gọn trên mobile */}
+        <div className="md:hidden text-orange-300 text-2xl cursor-pointer">
+          <FiMenu />
+        </div>
       </div>
     </header>
   );

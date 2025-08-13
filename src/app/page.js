@@ -38,7 +38,7 @@ export default function HomePage() {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {categories.map(category => (
             <div
               key={category.id}
@@ -47,7 +47,7 @@ export default function HomePage() {
               <img
                 src={category.image}
                 alt={category.name}
-                className="w-full h-64 object-cover"
+                className="w-full h-32 lg:h-64 object-cover"
               />
               <div className="p-4 text-center">
                 <h3 className="text-lg font-medium text-gray-800">{category.name}</h3>
